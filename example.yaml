@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vendor-deployment
+  labels:
+    app: vendor
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vendor
+  template:
+    metadata:
+      labels:
+        app: vendor
+    spec:
+      containers:
+      - name: vendorapp
+        image: vendorimage:vendorversion
+        ports:
+        - containerPort: 80
