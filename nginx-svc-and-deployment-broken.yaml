@@ -8,7 +8,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 80
+    targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -20,7 +20,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-test
+      app: nginx
   template:
     metadata:
       labels:
